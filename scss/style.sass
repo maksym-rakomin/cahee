@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Raleway:300,400,700&display=swap');
+   
+
+@import 'normalize'
+@import 'mixins'
+@import 'variables'
+
+
+
+
+
+* 
+    box-sizing: border-box
+html 
+    height: 100%
+    font-size: 10px
+    scroll-behavior: smooth
+
+body 
+    min-height: 100%
+    font: 400 1.5rem/1.6 'Poppins', sans-serif
+    @include text($text-color, $text-font, $text-size, 400, 1)
+
+a 
+    text-decoration: none
+    color: #000
+
+img
+    width: 100%
+
+.container
+    max-width: 1170px
+    width: 96%
+    margin: 0 auto
+
+
+.text-center
+    text-align: center
+
+
+
+.relative
+    position: relative
+
+.flex
+    display: flex
+    align-items: center
+
+
+.f-center
+    justify-content: center
+
+.f-between
+    justify-content: space-between
+
+
+
+
+.col-6
+    grid-column: span 6
+.col-4
+    grid-column: span 4
+.col-8
+    grid-column: span 8
+
+.row-2
+    grid-row-start: span 2
+.row-3
+    grid-row-start: span 3
+.row-4
+    grid-row-start: span 4
+
+
+.gtc-2-1fr
+    grid-template-columns: repeat(2, 1fr)
+
+.gtc-3-1fr
+    grid-template-columns: repeat(3, 1fr)
+
+.gtc-12-1fr
+    grid-template-columns: repeat(12, 1fr)
+
+
+.gtr-7-1fr
+    grid-template-rows: repeat(7, 1fr)
+
+.align-self
+    align-self: start
+
+
+
+
+.btn
+    display: inline-block
+    @include text($white, $text-font, 2rem, 300, 1)
+    border: 1px solid $accent-color
+    text-transform: uppercase
+    padding: 16px 25px
+    background-color: $accent-color
+    @include hover
+        color: $accent-color
+        background-color: $white
+    &--gray
+        background-color: $dark-gray
+        border-color: $dark-gray
+        margin-top: 50px
+        box-shadow: 0 3px 5px 1px $text-color
+        @include hover
+            color: $dark-gray
+            background-color: $white
+            box-shadow: 0 7px 140px -10px $text-color
+    &--green
+        background-color: $green
+        border-color: $green
+        box-shadow: 0 3px 2px -1px $text-color
+        @include hover
+            color: $green
+            box-shadow: 0 7px 140px -10px $green
+    
+    &--red
+        background-color: $red
+        border-color: $red
+        margin-top: 50px
+        box-shadow: 0 3px 2px -1px $text-color
+        @include hover
+            color: $red
+            box-shadow: 0 7px 140px -10px $red
+
+
+
+
+
+
+
+.nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 45px 0
+
+    &__items
+        list-style: none
+        margin: 0
+        padding: 0
+        display: flex
+        justify-content: space-between
+        align-items: center
+    
+    &__logo
+        fill: $text-color
+    
+    &__link
+        padding: 10px 0
+        border-top: 2px solid transparent
+        margin-left: 35px
+        @include text($text-color, $text-font, $text-little, 700, 1)
+
+        @include hover
+            border-top: 2px solid $accent-color
+        &--active
+            border-top: 2px solid $accent-color
+
+
+.header
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    min-height: 1000px
+    position: relative
+    &__title
+        @include text($text-color, $text-font, 6rem, 700, 1)
+        margin-top: 205px
+        margin-bottom: 18px
+    &__subtitle
+        @include text($text-color, $text-font, $text-size, 300, 1.6)
+        max-width: 370px
+        margin-bottom: 25px
+        &--medium
+            max-width: 570px
+
+    &__scroll
+        width: 30px
+        height: 60px
+        background: url(../img/scroll.png) no-repeat top
+        position: absolute
+        left: 50%
+        bottom: 60px
+        transform: translateX(-50%)
+        @include hover
+            background-position: bottom
+
+
+.section
+    padding: 20px 0
+    &__wrap
+        display: grid
+        grid-auto-flow: dense
+        align-items: center
+        width: 100%
+        height: 100%
+        grid-gap: 30px
+        &--big-gap
+            grid-gap: 170px
+
+
+    &__left
+        width: 100%
+        height: 100%
+        
+    
+    &__right
+        padding: 0 25px
+        &--no-padding
+            padding: 0
+        
+
+    &__title
+        @include text($white, $text-font, $text-title, 700, 1)
+        display: block
+        text-align: left
+        margin: 0 0 24px
+        width: 100%
+        &--black
+            color: $text-color
+
+        &--center
+            text-align: center
+
+        &--fz-40
+            font-size: 4rem
+            
+
+        &--pos-center
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+    &__text
+        @include text($white, $text-font, $text-size, 300, 1.6)
+        text-align: left
+        margin-bottom: 45px
+
+        &--black
+            color: $text-color
+
+        &--center
+            text-align: center
+            p
+                width: 51% // Для красоты не хватило 1%
+                margin: auto
+
+    &__list
+        padding: 0 85px
+        margin: 0
+        > * + *
+            margin-top: 20px
+
+    
+    &__li    
+        list-style: none
+
+    &__link
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background: $gray
+        padding: 30px
+        @include text($text-color, $text-font, 2rem, 700, 1.3)
+        > *
+            display: inline-block
+            text-align: center
+            vertical-align: middle
+        > div
+            width: calc( 100% - 60px )
+            max-height: 5rem
+            overflow: hidden
+        @include hover
+            box-shadow: 0 0 10px 2px $text-color
+    &__tile
+        display: block
+        width: 100%
+        height: 100%
+        box-shadow: 0 0 5px 1px $text-color
+        &:hover::after
+            background: #00000000
+        &hover
+            box-shadow: 0 0 5px 1px $blue
+
+        &-img
+            width: 100%
+            height: 100%
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background: #0000004f
+            transition: all .3s ease
+
+    &__tile--blog
+        z-index: 0
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.918) 0%, rgba(27, 27, 27, 0.534) 30%, rgba(255, 255, 255, 0.3) 100%)
+            z-index: 1
+            z-index: 1
+            transition: all .3s ease
+
+
+    &__time
+        background: $gray-opacity
+        padding: 5px
+        border-radius: 5px
+        display: inline-block
+        @include text($white, $text-font, 3.2rem, 700, .75)
+        text-transform: uppercase
+        width: 6rem
+        min-height: 6rem
+        position: absolute
+        top: 10%
+        left: 10%
+        z-index: 2
+        span 
+            font-size: 2.1rem
+
+
+    &__name
+        @include text($white, $text-font, 2rem, 700, 1.3)
+        padding: 5px 20px
+        text-align: left
+        position: absolute
+        bottom: 15%
+        max-height: 8.2rem
+        overflow: hidden
+        z-index: 2
+
+    &__author
+        @include text($white, $text-font, 1.3rem, 300, 1)
+        position: absolute
+        bottom: 5%
+        padding: 5px 20px
+        height: 2rem
+        overflow: hidden
+        z-index: 2
+
+
+
+    &__form
+        width: 65%
+
+    &__email        
+        @include text($text-color, $text-font, 2rem, 300, 1)
+        flex-basis: calc( 100% - 170px )
+        border: none
+        outline: none
+        border-top: 1px solid $text-color
+        border-bottom: 1px solid $text-color
+        padding: 14px 25px
+        background-color: transparent
+
+    &__contacts
+        margin: 0
+        padding: 0
+        list-style: none
+
+    &__tag
+        @include text($text-color, $text-font, 1.7rem, 700, 1.3)
+        text-transform: uppercase
+
+    &__caption
+        @include text($text-color, $text-font, 2rem, 400, 1.3)
+        margin: 10px auto 25px
+
+
+
+
+
+.form
+    text-align: right
+    > * + *
+        margin-top: 15px
+    > *
+        width: calc( 100% - 5px )
+        color: $white
+        background-color: $blue-transparent
+        border: none
+        box-shadow: -5px 0 0 0 $blue-transparent
+        outline: none
+        padding: 20px
+        &::placeholder
+            color: $white
+        @include hover
+            box-shadow: -5px 0 0 0 $light
+            background-color: $blue
+            outline: none
+            font-weight: 700
+        
+    &__textarea
+        resize: none
+
+.fild
+    box-shadow: -5px 0 0 0 $light
+    background-color: $blue
+    outline: none
+    font-weight: 700
+
+
+.about
+    background: $light
+
+
+.servises
+    background-color: $blue
+    padding: 150px 0
+
+
+.gallery
+    background-color: $yellow
+    padding: 100px 0
+
+.subscribe
+    background: center left / contain no-repeat url(../img/subscrible.jpg)
+    padding: 150px 0
+
+.blog
+    background-color: $purp
+    padding: 100px 0
+
+.contacts
+    padding: 100px 0
+    background: center left / cover no-repeat url(../img/contact.jpg)
+
+.footer
+    background-color: $brown
+    padding: 30px 0
+    @include text($light-gray, $text-font, $text-little, 300, 1.6)
+
+    &__link
+        @include text($brand-color, $text-font, $text-little, 700, 1.6)
+        @include hover
+            color: $light
+
+
+    &__logo
+        fill: $light-gray
+
+
+
+.up
+    width: 10px
+    height: 10px
+    position: fixed
+    bottom: 35px
+    right: 90px
+    transform: rotate(270deg)
+    a
+        @include text($brand-color, $text-font, 8rem, 700, 1)
+        @include hover
+            color: $light
