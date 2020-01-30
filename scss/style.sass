@@ -9,6 +9,7 @@
 
 
 
+
 * 
     box-sizing: border-box
 html 
@@ -33,19 +34,19 @@ img
     width: 96%
     margin: 0 auto
 
-
 .text-center
     text-align: center
-
 
 
 .relative
     position: relative
 
+.mb-50
+    margin-bottom: 50px
+
 .flex
     display: flex
     align-items: center
-
 
 .f-center
     justify-content: center
@@ -103,7 +104,6 @@ img
     &--gray
         background-color: $dark-gray
         border-color: $dark-gray
-        margin-top: 50px
         box-shadow: 0 3px 5px 1px $text-color
         @include hover
             color: $dark-gray
@@ -120,7 +120,6 @@ img
     &--red
         background-color: $red
         border-color: $red
-        margin-top: 50px
         box-shadow: 0 3px 2px -1px $text-color
         @include hover
             color: $red
@@ -191,7 +190,7 @@ img
 
 
 .section
-    padding: 20px 0
+    padding: 50px 0
     &__wrap
         display: grid
         grid-auto-flow: dense
@@ -200,7 +199,7 @@ img
         height: 100%
         grid-gap: 30px
         &--big-gap
-            grid-gap: 170px
+            grid-gap: 10%
 
 
     &__left
@@ -283,7 +282,7 @@ img
         height: 100%
         box-shadow: 0 0 5px 1px $text-color
         &:hover::after
-            background: #00000000
+            background: fade-out($text-color, 1)
         &hover
             box-shadow: 0 0 5px 1px $blue
 
@@ -311,11 +310,9 @@ img
             right: 0
             bottom: 0
             left: 0
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.918) 0%, rgba(27, 27, 27, 0.534) 30%, rgba(255, 255, 255, 0.3) 100%)
-            z-index: 1
+            background: fade-out($text-color, .5)
             z-index: 1
             transition: all .3s ease
-
 
     &__time
         background: $gray-opacity
@@ -325,7 +322,7 @@ img
         @include text($white, $text-font, 3.2rem, 700, .75)
         text-transform: uppercase
         width: 6rem
-        min-height: 6rem
+        height: 6rem
         position: absolute
         top: 10%
         left: 10%
@@ -372,14 +369,15 @@ img
         margin: 0
         padding: 0
         list-style: none
+        @include text($text-color, $text-font, 1.7rem, 700, 1.3)
 
     &__tag
-        @include text($text-color, $text-font, 1.7rem, 700, 1.3)
         text-transform: uppercase
 
     &__caption
-        @include text($text-color, $text-font, 2rem, 400, 1.3)
         margin: 10px auto 25px
+        font-size: 2rem
+        font-weight: 400
 
 
 
@@ -429,7 +427,10 @@ img
     padding: 100px 0
 
 .subscribe
-    background: center left / contain no-repeat url(../img/subscrible.jpg)
+    background: url(../img/subscrible.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 60% 50%
     padding: 150px 0
 
 .blog
@@ -467,3 +468,4 @@ img
         @include text($brand-color, $text-font, 8rem, 700, 1)
         @include hover
             color: $light
+@import 'media'

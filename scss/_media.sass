@@ -1,0 +1,100 @@
+@media only screen and (max-width : 1125px)
+    .header
+        min-height: 750px
+        &__title
+            margin-top: 100px
+
+    .servises
+        padding: 50px 0
+
+
+.section
+
+    &__title
+        font-size: 6rem
+
+    &__link
+        padding: 15px
+
+@media only screen and (max-width : 920px)
+    .servises
+
+        .section
+
+            &__list
+                width: 100%
+                padding: 0 
+                > * + *
+                    margin-top: 10px
+    .subscribe
+        padding: 50px 0
+        background-position-x: 15%
+
+    .blog, .contacts, .gallery
+        padding: 50px 0
+
+    .section
+
+        &__text--center
+            & p
+                width: 100%
+
+
+@media only screen and (max-width : 830px)
+    .header
+        min-height: 570px
+        &__title
+            margin-top: 50px
+
+        &__scroll
+            bottom: 10px
+
+
+    .gtc-2-1fr
+        grid-template-columns: 1fr
+        grid-gap: 0
+
+    .btn
+        font-size: 1.6rem
+
+    .section
+
+        &__time
+            font-size: 1.8rem
+            line-height: 1
+            text-transform: uppercase
+            width: auto
+            height: auto
+            position: absolute
+            & span
+                font-size: 1.8rem
+
+        &__name
+            font-size: 1.4rem
+            max-height: 5.8rem
+
+        &__img
+            width: 30%
+
+        &__contacts
+            background-color: $blue-transparent
+            padding: 20px
+            margin-top: 30px
+            color: $white
+
+        &__caption:last-child
+            margin-bottom: 0
+
+    .servises
+
+        .section
+            &__title
+                position: relative
+                top: auto
+                left: auto
+                transform: translate(0, 0)
+            &__right
+                grid-row-start: 1
+
+// @media only screen and (max-width : 830px)
+
