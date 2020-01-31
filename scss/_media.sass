@@ -1,8 +1,4 @@
 @media only screen and (max-width : 1125px)
-    .header
-        min-height: 750px
-        &__title
-            margin-top: 100px
 
     .servises
         padding: 50px 0
@@ -42,10 +38,6 @@
 
 @media only screen and (max-width : 830px)
     .header
-        min-height: 570px
-        &__title
-            margin-top: 50px
-
         &__scroll
             bottom: 10px
 
@@ -86,7 +78,6 @@
             margin-bottom: 0
 
     .servises
-
         .section
             &__title
                 position: relative
@@ -96,5 +87,94 @@
             &__right
                 grid-row-start: 1
 
-// @media only screen and (max-width : 830px)
+@media only screen and (max-width : 750px)
 
+    .nav
+        &__items
+            transform: translate(0, -500%)
+            display: none
+            width: 15%
+            text-align: right
+        
+        &__link
+            display: inline-block
+            margin: 0
+
+        &__hamburger
+            display: block
+
+        &__logo
+            svg
+                height: auto
+
+
+@media only screen and (max-width : 680px)
+    .gtc-3-1fr, .gtc-12-1fr
+        grid-template-columns: repeat(2, 1fr)
+    .gtr-7-1fr
+        grid-template-rows: repeat(3, 1fr)
+
+    .col-6, .col-4, .col-8
+        grid-column: span 1
+
+    .row-2, .row-3, .row-4
+        grid-row-start: span 1
+
+@media only screen and (max-width : 550px)
+    .gtc-2-1fr, .gtc-3-1fr, .gtc-12-1fr
+        grid-template-columns: repeat(1, 1fr)
+    .gtr-7-1fr
+        grid-template-rows: repeat(3, 1fr)
+    .section
+        &__name 
+            font-size: 3.4rem
+            max-height: 12.9rem
+            bottom: 12%
+
+        &__author
+            font-size: 2rem
+            height: 2.7rem
+
+        &__form
+            width: 100%
+
+        &__title
+            font-size: 4rem
+    .footer
+        .flex
+            flex-direction: column
+            & * + *
+                margin-top: 1rem
+
+@media only screen and (max-width : 450px)
+    .subscribe
+        .flex
+            flex-direction: column
+            & * + *
+                margin-top: 1rem
+
+    .section
+        &__email
+            width: 100%
+
+@media only screen and (max-width : 380px)
+
+    .section
+        &__name
+            font-size: 2.8rem
+            max-height: 10.5rem
+
+@media only screen and (max-width : 321px)
+    .section
+        &__title
+            font-size: 3.6rem
+        &__name
+            font-size: 1.8rem
+            max-height: 7.6rem
+
+    .nav
+        &__items
+            width: 30%
+        &__close
+            right: 30%
+            

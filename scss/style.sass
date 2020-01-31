@@ -33,9 +33,13 @@ img
     max-width: 1170px
     width: 96%
     margin: 0 auto
+    // height: 100%
 
 .text-center
     text-align: center
+
+.display-none
+    display: none
 
 
 .relative
@@ -135,9 +139,10 @@ img
     display: flex
     justify-content: space-between
     align-items: center
-    padding: 45px 0
+    padding: 10px 0
 
     &__items
+        transition: all 2s ease
         list-style: none
         margin: 0
         padding: 0
@@ -147,11 +152,13 @@ img
     
     &__logo
         fill: $text-color
+        width: 132px
     
     &__link
         padding: 10px 0
         border-top: 2px solid transparent
         margin-left: 35px
+        display: block
         @include text($text-color, $text-font, $text-little, 700, 1)
 
         @include hover
@@ -159,17 +166,36 @@ img
         &--active
             border-top: 2px solid $accent-color
 
+    &__hamburger
+        display: none
+        cursor: pointer
+        @include hover
+            transform: rotate(180deg)
+    &__close
+        display: none
+        cursor: pointer
+        position: absolute
+        right: 20%
+        @include hover
+            transform: rotate(180deg)
+
+
 
 .header
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-    min-height: 1000px
+    padding: 35px 0
+    height: 100vh
     position: relative
+
+    &__content
+        outline: 1px solid red
+        margin-top: 10vw
+
     &__title
         @include text($text-color, $text-font, 6rem, 700, 1)
-        margin-top: 205px
-        margin-bottom: 18px
+
     &__subtitle
         @include text($text-color, $text-font, $text-size, 300, 1.6)
         max-width: 370px
@@ -183,7 +209,7 @@ img
         background: url(../img/scroll.png) no-repeat top
         position: absolute
         left: 50%
-        bottom: 60px
+        bottom: 5%
         transform: translateX(-50%)
         @include hover
             background-position: bottom
@@ -419,7 +445,7 @@ img
 
 .servises
     background-color: $blue
-    padding: 150px 0
+    padding: 100px 0
 
 
 .gallery
