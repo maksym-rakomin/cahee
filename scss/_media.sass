@@ -89,24 +89,52 @@
 
 @media only screen and (max-width : 750px)
 
+    // .nav
+    //     &__items
+    //         transform: translate(0, -500%)
+    //         display: none
+    //         width: 15%
+    //         text-align: right
+        
+    //     &__link
+    //         display: inline-block
+    //         margin: 0
+
+
+    //     &__logo
+    //         svg
+    //             height: auto
     .nav
         &__items
-            transform: translate(0, -500%)
-            display: none
-            width: 15%
-            text-align: right
-        
-        &__link
-            display: inline-block
+
+            position: fixed
+            top: 0
+            left: 0
+            right: 0
+            background-color: gray
+            padding: 20px
             margin: 0
+            text-align: center
+            transform: translate(0, -100%)
+            opacity: 0
+            min-height: 100vh
+            z-index: 10
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            @include tr()
+            .menu__opened &
+                transform: translate(0, 0)
+                opacity: 1
+        &__link--active
+            border-color: transparent
 
         &__hamburger
             display: block
-
-        &__logo
-            svg
-                height: auto
-
+            position: absolute
+            top: 9%
+            right: 5%
+            z-index: 11
 
 @media only screen and (max-width : 680px)
     .gtc-3-1fr, .gtc-12-1fr

@@ -15,26 +15,15 @@
     'use strict';
 
     let menuHamburger = document.querySelector('.nav__hamburger'),
-        menuClose     = document.querySelector('.nav__close'),
-        menuList      = document.querySelector('.nav__items'),
-        menuLogo      = document.querySelector('.nav__logo');
+        menuNav       = document.querySelector('.nav'),
+        menuList      = document.querySelector('.nav__items');
+        
 
     menuHamburger.addEventListener('click', () => {
-        // console.log(event.target);
-        menuHamburger.style.display = 'none';
-        menuList.style.display = 'block';
-        menuList.style.transform = 'translate(0, 0)';
-        menuClose.style.display = 'block';
-        menuLogo.style.width = '55%';
+        menuNav.classList.toggle('menu__opened');
     });
-    menuClose.addEventListener('click', () => {
-        // console.log(event.target);
-        menuHamburger.style.display = 'block';
-        menuList.style.display = 'none';
-        menuList.style.transform = 'translate(0, -500)';
-        menuClose.style.display = 'none';
-        menuLogo.style.width = '132px';
+    menuList.addEventListener('click', () => {
+        menuNav.classList.remove('menu__opened');
     });
 
 })();
-// .display-none

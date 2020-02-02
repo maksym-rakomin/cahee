@@ -518,19 +518,6 @@ img {
       -ms-transform: rotate(180deg);
       -o-transform: rotate(180deg);
       transform: rotate(180deg); }
-  .nav__close {
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    right: 20%;
-    -webkit-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    transition: all 0.4s ease; }
-    .nav__close:hover, .nav__close:focus, .nav__close:active {
-      -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      transform: rotate(180deg); }
 
 .header {
   background-repeat: no-repeat;
@@ -538,9 +525,9 @@ img {
   background-size: cover;
   padding: 35px 0;
   height: 100vh;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .header__content {
-    outline: 1px solid red;
     margin-top: 10vw; }
   .header__title {
     color: #262626;
@@ -967,20 +954,48 @@ img {
 
 @media only screen and (max-width: 750px) {
   .nav__items {
-    -webkit-transform: translate(0, -500%);
-    -ms-transform: translate(0, -500%);
-    -o-transform: translate(0, -500%);
-    transform: translate(0, -500%);
-    display: none;
-    width: 15%;
-    text-align: right; }
-  .nav__link {
-    display: inline-block;
-    margin: 0; }
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: gray;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    -webkit-transform: translate(0, -100%);
+    -ms-transform: translate(0, -100%);
+    -o-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+    opacity: 0;
+    min-height: 100vh;
+    z-index: 10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
+    .menu__opened .nav__items {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0);
+      opacity: 1; }
+  .nav__link--active {
+    border-color: transparent; }
   .nav__hamburger {
-    display: block; }
-  .nav__logo svg {
-    height: auto; } }
+    display: block;
+    position: absolute;
+    top: 9%;
+    right: 5%;
+    z-index: 11; } }
 
 @media only screen and (max-width: 680px) {
   .gtc-3-1fr, .gtc-12-1fr {
